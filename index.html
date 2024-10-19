@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Stock Tracker Dashboard</title>
+</head>
+<body class="bg-slate-900">
+
+    <!-- Header -->
+    <div>
+        <h1 class="text-white bg-slate-500 font-bold h-14 flex justify-center items-center text-2xl">
+            STOCK TRACKER DASHBOARD
+        </h1>
+    </div>
+
+    <!-- Stock Selector -->
+    <div class="flex justify-center items-center gap-8 mt-4">
+        <section><h1 class="text-white">Select Trending Stock</h1></section>
+        <select id="stocks" name="Stocks" class="w-52 h-10 rounded-md">
+            <option value="AAPL">AAPL</option>
+            <option value="GOOGL">GOOGL</option>
+            <option value="MSFT">MSFT</option>
+            <option value="AMZN">AMZN</option>
+            <option value="TSLA">TSLA</option>
+            <option value="FB">FB</option>
+            <option value="NFLX">NFLX</option>
+            <option value="NVDA">NVDA</option>
+            <option value="BABA">BABA</option>
+            <option value="INTC">INTC</option>
+        </select>
+        <button id="display" class="bg-sky-600 p-2 text-white font-semibold w-36 rounded-md hover:shadow-md hover:border hover:border-neutral-400">
+            Load Stocks
+        </button>
+    </div>
+
+    <!-- Stock Information -->
+    <div class="mt-8 px-8">
+        <!-- Stock Details -->
+        <section class="mb-6">
+            <h1 class="text-white text-2xl mb-4">Stock Information</h1>
+            <div id="stockDetails" class="text-white"></div>
+        </section>
+
+        <!-- Stock Chart -->
+        <section class="mb-6">
+            <h1 class="text-white text-2xl mb-4">Stock Price Graph</h1>
+            <canvas id="stock-chart" class="bg-white p-2 rounded-md"></canvas>
+        </section>
+
+        <!-- Comparison Table -->
+        <section>
+            <h1 class="text-2xl text-white mb-4">Compare Stocks</h1>
+            <table id="stockTable" class="table-auto w-full bg-gray-800 text-white border-collapse border border-gray-700">
+                <thead>
+                    <tr>
+                        <th class="border border-gray-700 p-2">Stock</th>
+                        <th class="border border-gray-700 p-2">Price</th>
+                        <th class="border border-gray-700 p-2">Change</th>
+                        <th class="border border-gray-700 p-2">Volume</th>
+                    </tr>
+                </thead>
+                <tbody id="compareTable"></tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0"></script>
+    <script src="script.js"></script>
+</body>
+</html>
